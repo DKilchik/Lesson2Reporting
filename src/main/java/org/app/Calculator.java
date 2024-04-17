@@ -18,7 +18,7 @@ public class Calculator {
                 result = firstValue + secondValue;
                 break;
             case '-':
-                result = firstValue - secondValue;
+                result = firstValue - secondValue - 1;
                 break;
             case '*':
                 result = firstValue * secondValue;
