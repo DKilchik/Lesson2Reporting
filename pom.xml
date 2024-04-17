@@ -27,6 +27,12 @@
       <artifactId>extentreports</artifactId>
       <version>4.1.5</version> <!-- Or the latest version -->
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports-testng-adapter</artifactId>
+      <version>1.0.7</version>
+    </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
     <dependency>
       <groupId>org.apache.maven.plugins</groupId>

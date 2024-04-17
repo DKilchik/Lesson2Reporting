@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class TestCalculator extends BaseTest{
+public class TestCalculator{
 
 
         public int firstValue;
@@ -25,7 +25,6 @@ public class TestCalculator extends BaseTest{
 
         @Test
         public void testAddition() {
-            extent.createTest("testAddition");
         // get reference data
         int expectedResult = firstValue + secondValue;
 
@@ -36,7 +35,6 @@ public class TestCalculator extends BaseTest{
 
         @Test
         public void testSubtraction() {
-            extent.createTest("testSubtraction");
         // get reference data
         int expectedResult = firstValue - secondValue;
 
