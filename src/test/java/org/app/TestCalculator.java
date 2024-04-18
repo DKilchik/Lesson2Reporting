@@ -2,20 +2,23 @@ package org.app;
 
 
 
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-
+@Epic("Calculator")
+@Owner("Orange Systems")
+@Severity(SeverityLevel.CRITICAL)
 public class TestCalculator{
 
 
         public int firstValue;
         public int secondValue;
 
-        @BeforeTest
+        @BeforeTest(description = "Generating 2 random values")
         public void getRandomValues(){
         int min = 0;
         int max = 10;
@@ -23,7 +26,9 @@ public class TestCalculator{
         this.secondValue = ThreadLocalRandom.current().nextInt(min, max + 1);
         }
 
-        @Test
+        @Test(description = "Addition")
+        @Feature("Addition")
+        @Description("Checking addition of 2 random values")
         public void testAddition() {
         // get reference data
         int expectedResult = firstValue + secondValue;
@@ -33,7 +38,9 @@ public class TestCalculator{
         Assert.assertEquals(actualResult,expectedResult,"Wrong addition result");
     }
 
-        @Test
+        @Test(description = "Subtraction")
+        @Feature("Subtraction")
+        @Description("Checking subtraction using 2 random values")
         public void testSubtraction() {
         // get reference data
         int expectedResult = firstValue - secondValue;
