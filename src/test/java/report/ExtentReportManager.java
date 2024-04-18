@@ -1,6 +1,8 @@
 package report;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
@@ -25,5 +27,9 @@ public class ExtentReportManager {
         extent.setSystemInfo("OS","Windows 10");
 
         return extent;
+    }
+
+    public static void logInfoDetails(String log){
+        TestNGListener.extentTest.info(MarkupHelper.createLabel(log, ExtentColor.GREY));
     }
 }

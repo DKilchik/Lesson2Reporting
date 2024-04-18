@@ -10,7 +10,7 @@ import org.testng.ITestResult;
 public class TestNGListener implements ITestListener {
 
     ExtentReports extentReports;
-    ExtentTest extentTest;
+    public static ExtentTest extentTest;
 
     @Override
     public void onStart(ITestContext context){

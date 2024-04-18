@@ -5,6 +5,7 @@ package org.app;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import report.ExtentReportManager;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -28,8 +29,17 @@ public class TestCalculator{
         // get reference data
         int expectedResult = firstValue + secondValue;
 
+        // log test info into report
+        ExtentReportManager.logInfoDetails("First value: " + firstValue);
+        ExtentReportManager.logInfoDetails("Second value: " + secondValue);
+        ExtentReportManager.logInfoDetails("Expected result: " + expectedResult);
+
         Calculator calculator = new Calculator(firstValue, '+', secondValue);
         double actualResult = calculator.calculate();
+
+        // log test info into report
+        ExtentReportManager.logInfoDetails("Actual result: " + actualResult);
+
         Assert.assertEquals(actualResult,expectedResult,"Wrong addition result");
     }
 
@@ -38,8 +48,17 @@ public class TestCalculator{
         // get reference data
         int expectedResult = firstValue - secondValue;
 
+        // log test info into report
+        ExtentReportManager.logInfoDetails("First value: " + firstValue);
+        ExtentReportManager.logInfoDetails("Second value: " + secondValue);
+        ExtentReportManager.logInfoDetails("Expected result: " + expectedResult);
+
         Calculator calculator = new Calculator(firstValue, '-', secondValue);
         double actualResult = calculator.calculate();
+
+        // log test info into report
+        ExtentReportManager.logInfoDetails("Actual result: " + actualResult);
+
         Assert.assertEquals(actualResult,expectedResult,"Wrong subtraction result");
     }
 }
