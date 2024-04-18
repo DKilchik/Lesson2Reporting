@@ -3,6 +3,7 @@ package org.app;
 
 
 import io.qameta.allure.*;
+import io.qameta.allure.internal.shadowed.jackson.databind.AnnotationIntrospector;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -23,7 +24,9 @@ public class TestCalculator{
         int min = 0;
         int max = 10;
         this.firstValue = ThreadLocalRandom.current().nextInt(min, max + 1);
+        Allure.attachment("first value: ", String.valueOf(this.firstValue));
         this.secondValue = ThreadLocalRandom.current().nextInt(min, max + 1);
+        Allure.attachment("second value: ",String.valueOf(this.secondValue));
         }
 
         @Test(description = "Addition")
