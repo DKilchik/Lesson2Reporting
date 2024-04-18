@@ -31,11 +31,16 @@ public class TestCalculator{
         @Description("Checking addition of 2 random values")
         public void testAddition() {
         // get reference data
+
+        Allure.step("Getting expected result");
         int expectedResult = firstValue + secondValue;
 
         Calculator calculator = new Calculator(firstValue, '+', secondValue);
+        Allure.step("Calculate actual result");
         double actualResult = calculator.calculate();
-        Assert.assertEquals(actualResult,expectedResult,"Wrong addition result");
+            Allure.step("Compare expected and actual result", step -> {
+            Assert.assertEquals(actualResult,expectedResult,"Wrong addition result");
+        });
     }
 
         @Test(description = "Subtraction")
